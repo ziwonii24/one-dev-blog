@@ -2,16 +2,16 @@ import * as React from "react";
 import Seo from "../components/seo";
 import Layout from "../components/layout";
 
-const TITLE = "Home Page";
+const TITLE = "About Page";
 
-const IndexPage = () => {
+const AboutPage = () => {
   return (
     <Layout pageTitle={TITLE}>
-      <p>This is Home Page.</p>
+      <p>This is About Page.</p>
     </Layout>
   );
 };
 
-export default IndexPage;
+export default AboutPage;
 
 export const Head = () => <Seo title={TITLE} />;

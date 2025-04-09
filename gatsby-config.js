@@ -4,7 +4,7 @@
 module.exports = {
   siteMetadata: {
     title: `One Dev Blog`,
-    siteUrl: `https://www.yourdomain.tld`,
+    pathPrefix: "/one-dev-blog",
   },
   plugins: [
     "gatsby-plugin-image",

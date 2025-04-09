@@ -1,5 +1,6 @@
 {
   "name": "one-dev-blog",
+  "homepage": "http://ziwonii24.github.io/one-dev-blog",
   "version": "1.0.0",
   "private": true,
   "description": "one-dev-blog",
@@ -12,7 +13,9 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d public"
   },
   "dependencies": {
     "@mdx-js/react": "^2.3.0",
@@ -24,5 +27,8 @@
     "gatsby-transformer-sharp": "^5.14.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }

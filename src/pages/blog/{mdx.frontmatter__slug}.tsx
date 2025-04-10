@@ -23,13 +23,19 @@ export const query = graphql`
   }
 `;
 
-const BlogPost = ({ data, children }) => {
+const BlogPost = ({
+  data,
+  children,
+}: {
+  data: any;
+  children: React.ReactNode;
+}) => {
   const image = getImage(data.mdx.frontmatter.hero_image);
 
   return (
     <Layout pageTitle={data.mdx.frontmatter.title}>
       <p>{data.mdx.frontmatter.date}</p>
-      <GatsbyImage image={image} alt={data.mdx.frontmatter.hero_image_alt} />
+      <GatsbyImage image={image!} alt={data.mdx.frontmatter.hero_image_alt} />
       {children}
     </Layout>
   );

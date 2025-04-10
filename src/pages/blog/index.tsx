@@ -21,10 +21,10 @@ export const query = graphql`
   }
 `;
 
-const BlogPage = ({ data }) => {
+const BlogPage = ({ data }: { data: any }) => {
   return (
     <Layout pageTitle={TITLE}>
-      {data.allMdx.nodes.map((node) => (
+      {data.allMdx.nodes.map((node: any) => (
         <article key={node.id}>
           <h2>
             <Link to={`/blog/${node.frontmatter.slug}`}>

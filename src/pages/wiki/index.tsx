@@ -3,31 +3,15 @@ import Seo from "../../components/seo";
 import Layout from "../../components/layout";
 import { Link, graphql } from "gatsby";
 
-const TITLE = "Blog Page";
+const TITLE = "Wiki";
 
-export const query = graphql`
-  query {
-    allMdx(sort: { frontmatter: { date: DESC } }) {
-      nodes {
-        frontmatter {
-          date(formatString: "MMMM D, YYYY")
-          title
-          slug
-        }
-        id
-        excerpt
-      }
-    }
-  }
-`;
-
-const BlogPage = ({ data }) => {
+const WikiPage = ({ data }: { data: any }) => {
   return (
     <Layout pageTitle={TITLE}>
-      {data.allMdx.nodes.map((node) => (
+      {data.allMdx.nodes.map((node: any) => (
         <article key={node.id}>
           <h2>
-            <Link to={`/blog/${node.frontmatter.slug}`}>
+            <Link to={`/wiki/${node.frontmatter.slug}`}>
               {node.frontmatter.title}
             </Link>
           </h2>
@@ -39,6 +23,22 @@ const BlogPage = ({ data }) => {
   );
 };
 
-export default BlogPage;
+export default WikiPage;
+
+export const query = graphql`
+  query {
+    allMdx(sort: { frontmatter: { date: DESC } }) {
+      nodes {
+        frontmatter {
+          date(formatString: "YYYY.MM.DD")
+          title
+          slug
+        }
+        id
+        excerpt
+      }
+    }
+  }
+`;
 
 export const Head = () => <Seo title={TITLE} />;

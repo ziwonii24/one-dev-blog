@@ -3,15 +3,15 @@ import Seo from "../../components/seo";
 import Layout from "../../components/layout";
 import { Link, graphql } from "gatsby";
 
-const TITLE = "Blog";
+const TITLE = "Wiki";
 
-const BlogPage = ({ data }: { data: any }) => {
+const WikiPage = ({ data }: { data: any }) => {
   return (
     <Layout pageTitle={TITLE}>
       {data.allMdx.nodes.map((node: any) => (
         <article key={node.id}>
           <h2>
-            <Link to={`/blog/${node.frontmatter.slug}`}>
+            <Link to={`/wiki/${node.frontmatter.slug}`}>
               {node.frontmatter.title}
             </Link>
           </h2>
@@ -23,7 +23,7 @@ const BlogPage = ({ data }: { data: any }) => {
   );
 };
 
-export default BlogPage;
+export default WikiPage;
 
 export const query = graphql`
   query {

@@ -36,7 +36,7 @@ const Layout = ({
           </ul>
         </nav>
       </header>
-      <main className="border border-solid border-black w-full max-w-2xl">
+      <main className="border border-solid border-black w-full max-w-2xl min-h-screen">
         <h1>{pageTitle}</h1>
         {children}
       </main>

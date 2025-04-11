@@ -4,9 +4,9 @@ import Seo from "../../components/seo";
 import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-const TITLE = "Blog Post";
+const TITLE = "Wiki Post";
 
-const BlogPost = ({
+const WikiPost = ({
   data,
   children,
 }: {
@@ -14,6 +14,7 @@ const BlogPost = ({
   children: React.ReactNode;
 }) => {
   const image = getImage(data.mdx.frontmatter.hero_image);
+
   return (
     <Layout pageTitle={data.mdx.frontmatter.title}>
       <p>{data.mdx.frontmatter.date}</p>
@@ -23,7 +24,7 @@ const BlogPost = ({
   );
 };
 
-export default BlogPost;
+export default WikiPost;
 
 export const query = graphql`
   query ($id: String) {

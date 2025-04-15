@@ -22,12 +22,12 @@ const Layout = ({
     <div className="border border-solid flex flex-col items-center h-screen">
       <header className="border border-solid border-black flex justify-between items-center w-full">
         <h1>
-          <Link to="/">{data.site.siteMetadata.title}</Link>
+          <Link to={withPrefix("/")}>{data.site.siteMetadata.title}</Link>
         </h1>
         <nav>
           <ul className="border border-solid border-black flex flex-row gap-4">
             <li>
-              <Link to="/">홈</Link>
+              <Link to={withPrefix("/")}>홈</Link>
             </li>
             <li>
               <Link to={withPrefix("/blog")}>블로그</Link>

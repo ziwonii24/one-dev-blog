@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link, useStaticQuery, graphql } from "gatsby";
+import { Link, useStaticQuery, graphql, withPrefix } from "gatsby";
 
 const Layout = ({
   pageTitle,
@@ -30,10 +30,10 @@ const Layout = ({
               <Link to="/">홈</Link>
             </li>
             <li>
-              <Link to="/blog">블로그</Link>
+              <Link to={withPrefix("/blog")}>블로그</Link>
             </li>
             <li>
-              <Link to="/wiki">내 머릿속(이었으면)</Link>
+              <Link to={withPrefix("/wiki")}>내 머릿속(이었으면)</Link>
             </li>
           </ul>
         </nav>

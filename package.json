@@ -23,6 +23,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "gatsby": "^5.14.1",
+    "gatsby-plugin-catch-links": "^5.14.0",
     "gatsby-plugin-image": "^3.14.0",
     "gatsby-plugin-mdx": "^5.14.1",
     "gatsby-plugin-sharp": "^5.14.0",

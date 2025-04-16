@@ -2,9 +2,9 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
+  pathPrefix: "/one-dev-blog",
   siteMetadata: {
     title: `One Dev Blog`,
-    pathPrefix: "/one-dev-blog",
   },
   plugins: [
     "gatsby-plugin-image",
@@ -19,5 +19,6 @@ module.exports = {
     "gatsby-plugin-mdx",
     "gatsby-transformer-sharp",
     "gatsby-plugin-postcss",
+    "gatsby-plugin-catch-links",
   ],
 };

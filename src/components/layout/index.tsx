@@ -1,5 +1,7 @@
 import * as React from "react";
 import Header from "./Header";
+import Footer from "./Footer";
+
 const Layout = ({
   pageTitle,
   children,
@@ -15,10 +17,7 @@ const Layout = ({
           <h1>{pageTitle}</h1>
           {children}
         </main>
-        <footer className="border border-solid border-black w-full flex justify-between items-center">
-          <p>Copyright ⓒ jiwonChoi 2025</p>
-          <div>some links</div>
-        </footer>
+        <Footer />
       </div>
     </div>
   );

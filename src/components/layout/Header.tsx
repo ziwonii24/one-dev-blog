@@ -13,8 +13,8 @@ const Header = () => {
   `);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="flex h-14 items-center justify-between pl-4 pr-4 border-b border-dashed">
+    <header className="sticky z-50 w-full h-14 flex justify-center bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-dashed">
+      <div className="w-full xl:w-2/3 h-14 flex items-center justify-between pl-4 pr-4">
         <h1 className="font-mono">
           <Link to="/">{data.site.siteMetadata.title}</Link>
         </h1>

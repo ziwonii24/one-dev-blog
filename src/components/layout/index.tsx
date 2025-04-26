@@ -10,7 +10,7 @@ const Layout = ({
   children: React.ReactNode;
 }) => {
   return (
-    <div className="border border-solid flex flex-col items-center h-screen">
+    <div className="flex flex-col items-center h-screen w-screen">
       <Header />
       <div className="flex flex-col items-center w-full overflow-y-auto">
         <main className="w-full max-w-2xl min-h-screen py-6">

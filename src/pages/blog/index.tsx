@@ -1,24 +1,19 @@
 import * as React from "react";
 import Seo from "../../components/seo";
 import Layout from "../../components/layout";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
+import Article from "./Article";
 
 const TITLE = "Blog";
 
 const BlogPage = ({ data }: { data: any }) => {
   return (
     <Layout pageTitle={TITLE}>
-      {data.allMdx.nodes.map((node: any) => (
-        <article key={node.id}>
-          <h2>
-            <Link to={`/blog/${node.frontmatter.slug}`}>
-              {node.frontmatter.title}
-            </Link>
-          </h2>
-          <small>{node.frontmatter.date}</small>
-          <p>{node.excerpt}</p>
-        </article>
-      ))}
+      <section className="flex flex-col gap-8">
+        {data.allMdx.nodes.map((node: any) => (
+          <Article key={node.id} node={node} />
+        ))}
+      </section>
     </Layout>
   );
 };
@@ -30,9 +25,15 @@ export const query = graphql`
     allMdx(sort: { frontmatter: { date: DESC } }) {
       nodes {
         frontmatter {
-          date(formatString: "YYYY.MM.DD")
+          date(formatString: "YYYY-MM-DD")
           title
           slug
+          hero_image {
+            childImageSharp {
+              gatsbyImageData(width: 140)
+            }
+          }
+          hero_image_alt
         }
         id
         excerpt

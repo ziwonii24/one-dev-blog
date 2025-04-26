@@ -13,8 +13,8 @@ const Layout = ({
     <div className="flex flex-col items-center h-screen w-screen">
       <Header />
       <div className="flex flex-col items-center w-full overflow-y-auto">
-        <main className="w-full max-w-2xl min-h-screen py-6">
-          <h1 className="text-3xl font-bold tracking-tight mb-2">
+        <main className="w-full xl:w-2/3 min-h-screen py-6 pl-4 pr-4">
+          <h1 className="text-3xl font-bold tracking-tight mb-12">
             {pageTitle}
           </h1>
           {children}

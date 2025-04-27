@@ -9,7 +9,7 @@ const TITLE = "Blog";
 const BlogPage = ({ data }: { data: any }) => {
   return (
     <Layout pageTitle={TITLE}>
-      <section className="flex flex-col gap-8">
+      <section className="flex flex-col gap-6">
         {data.allMdx.nodes.map((node: any) => (
           <Article key={node.id} node={node} path="blog" />
         ))}

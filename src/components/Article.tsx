@@ -5,7 +5,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 const Article = ({ node, path }: { node: any; path: string }) => {
   const image = getImage(node.frontmatter.hero_image);
   return (
-    <article key={node.id}>
+    <article key={node.id} className="p-3 rounded-lg border hover:shadow">
       <Link
         to={`/${path}/${node.frontmatter.slug}`}
         className="w-full flex justify-between"
@@ -20,7 +20,11 @@ const Article = ({ node, path }: { node: any; path: string }) => {
           <span className="text-sm font-light">{node.frontmatter.date}</span>
         </div>
         {image && (
-          <GatsbyImage image={image} alt={node.frontmatter.hero_image_alt} />
+          <GatsbyImage
+            image={image}
+            alt={node.frontmatter.hero_image_alt}
+            className="rounded-xl"
+          />
         )}
       </Link>
     </article>

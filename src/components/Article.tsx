@@ -2,12 +2,12 @@ import * as React from "react";
 import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-const Article = ({ node }: { node: any }) => {
+const Article = ({ node, path }: { node: any; path: string }) => {
   const image = getImage(node.frontmatter.hero_image);
   return (
     <article key={node.id}>
       <Link
-        to={`/blog/${node.frontmatter.slug}`}
+        to={`/${path}/${node.frontmatter.slug}`}
         className="w-full flex justify-between"
       >
         <div className="flex flex-col justify-between gap-2">

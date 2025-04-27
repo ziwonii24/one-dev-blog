@@ -2,7 +2,7 @@ import * as React from "react";
 import Seo from "../../components/seo";
 import Layout from "../../components/layout";
 import { graphql } from "gatsby";
-import Article from "./Article";
+import Article from "../../components/Article";
 
 const TITLE = "Blog";
 
@@ -11,7 +11,7 @@ const BlogPage = ({ data }: { data: any }) => {
     <Layout pageTitle={TITLE}>
       <section className="flex flex-col gap-8">
         {data.allMdx.nodes.map((node: any) => (
-          <Article key={node.id} node={node} />
+          <Article key={node.id} node={node} path="blog" />
         ))}
       </section>
     </Layout>
@@ -22,7 +22,10 @@ export default BlogPage;
 
 export const query = graphql`
   query {
-    allMdx(sort: { frontmatter: { date: DESC } }) {
+    allMdx(
+      sort: { frontmatter: { date: DESC } }
+      filter: { internal: { contentFilePath: { regex: "/contents/blog/" } } }
+    ) {
       nodes {
         frontmatter {
           date(formatString: "YYYY-MM-DD")

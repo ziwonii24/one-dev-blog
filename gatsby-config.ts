@@ -13,7 +13,14 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: `blog`,
-        path: `${__dirname}/blog`,
+        path: `${__dirname}/contents/blog`,
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: `wiki`,
+        path: `${__dirname}/contents/wiki`,
       },
     },
     "gatsby-plugin-mdx",

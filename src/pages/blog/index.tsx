@@ -39,7 +39,6 @@ export const query = graphql`
           hero_image_alt
         }
         id
-        excerpt
       }
     }
   }

@@ -10,7 +10,8 @@ const Post = ({
   return (
     <div>
       <div className="flex justify-between w-full">
-        <p>{date}</p>
+        <p />
+        <p className="text-sm text-foreground/50 font-mono">{date}</p>
       </div>
       <div className="prose prose-neutral dark:prose-invert max-w-none mt-4">
         {children}

@@ -12,7 +12,7 @@ const Layout = ({
   return (
     <div className="flex flex-col items-center h-screen w-screen">
       <Header />
-      <div className="flex flex-col items-center w-full overflow-y-auto">
+      <div className="flex flex-col items-center w-full h-fulloverflow-y-auto">
         <main className="w-full xl:w-2/3 min-h-screen py-6 pl-4 pr-4">
           <h1 className="text-3xl font-bold tracking-tight mb-12">
             {pageTitle}

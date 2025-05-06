@@ -23,7 +23,21 @@ module.exports = {
         path: `${__dirname}/contents/wiki`,
       },
     },
-    "gatsby-plugin-mdx",
+    {
+      resolve: "gatsby-plugin-mdx",
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+              quality: 90,
+              withWebp: true,
+            },
+          },
+        ],
+      },
+    },
     "gatsby-transformer-sharp",
     "gatsby-plugin-postcss",
     "gatsby-plugin-catch-links",

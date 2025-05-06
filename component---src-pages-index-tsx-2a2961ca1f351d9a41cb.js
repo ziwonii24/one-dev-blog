@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkone_dev_blog=self.webpackChunkone_dev_blog||[]).push([[691],{7200:function(e,t,n){n.r(t),n.d(t,{Head:function(){return s}});var l=n(7294),a=n(4001),c=n(8616);const o="Home";t.default=()=>l.createElement(c.Z,{pageTitle:o},l.createElement("p",null,"This is Home Page."));const s=()=>l.createElement(a.Z,{title:o})}}]);
-//# sourceMappingURL=component---src-pages-index-tsx-2a2961ca1f351d9a41cb.js.map

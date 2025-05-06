@@ -44,7 +44,7 @@ export default function IndexPage({ data }: Props) {
             안전지대를 벗어나야 인생이 시작된다.
           </p>
         </div>
-        <div className="mt-20 flex flex-row gap-1">
+        <div className="mt-20 flex flex-row flex-wrap gap-1 w-full h-auto">
           {uniqueCategories.map((category) => (
             <Category key={category} content={category} />
           ))}

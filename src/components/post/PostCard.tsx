@@ -19,7 +19,7 @@ export default function PostCard({ post, categories }: Props) {
       >
         <div className="flex flex-col justify-between gap-2">
           <div>
-            <div className="flex flex-row gap-1 mb-2">
+            <div className="flex flex-row flex-wrap gap-1 mb-2 w-full">
               {categories?.map((category) => (
                 <Category key={category} content={category} />
               ))}
@@ -35,7 +35,7 @@ export default function PostCard({ post, categories }: Props) {
           <GatsbyImage
             image={image}
             alt={post.frontmatter.hero_image_alt}
-            className="rounded-xl"
+            className="rounded-xl w-36 min-w-36 h-36"
           />
         )}
       </Link>

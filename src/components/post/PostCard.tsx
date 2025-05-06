@@ -2,6 +2,7 @@ import * as React from "react";
 import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { TPostNode } from "@/types/post";
+import Category from "../Category";
 
 type Props = {
   post: TPostNode;
@@ -18,17 +19,17 @@ export default function PostCard({ post, categories }: Props) {
       >
         <div className="flex flex-col justify-between gap-2">
           <div>
+            <div className="flex flex-row gap-1 mb-2">
+              {categories?.map((category) => (
+                <Category key={category} content={category} />
+              ))}
+            </div>
             <h2 className="text-xl font-semibold mb-2">
               {post.frontmatter.title}
             </h2>
             <p className="text-balance">{post.excerpt}</p>
           </div>
           <span className="text-sm font-light">{post.frontmatter.date}</span>
-          {categories?.map((c) => (
-            <p key={c} className="text-sm text-foreground/50 font-mono">
-              {c}
-            </p>
-          ))}
         </div>
         {image && (
           <GatsbyImage

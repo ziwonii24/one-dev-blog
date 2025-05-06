@@ -2,13 +2,12 @@ import * as React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 
-const Layout = ({
-  pageTitle,
-  children,
-}: {
+type Props = {
   pageTitle: string;
   children: React.ReactNode;
-}) => {
+};
+
+export default function Layout({ pageTitle, children }: Props) {
   return (
     <div className="flex flex-col items-center h-screen w-screen">
       <Header />
@@ -23,6 +22,4 @@ const Layout = ({
       </div>
     </div>
   );
-};
-
-export default Layout;
+}

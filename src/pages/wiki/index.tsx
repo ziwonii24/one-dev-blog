@@ -2,23 +2,14 @@ import * as React from "react";
 import Seo from "../../components/seo";
 import Layout from "../../components/layout";
 import { graphql } from "gatsby";
-import Article from "../../components/Article";
+import PostCard from "../../components/post/PostCard";
+import { TPostsData } from "@/types/post";
 
 const TITLE = "Wiki";
 
-const WikiPage = ({ data }: { data: any }) => {
-  return (
-    <Layout pageTitle={TITLE}>
-      <section className="flex flex-col gap-6">
-        {data.allMdx.nodes.map((node: any) => (
-          <Article key={node.id} node={node} path="wiki" />
-        ))}
-      </section>
-    </Layout>
-  );
+type Props = {
+  data: TPostsData;
 };
-
-export default WikiPage;
 
 export const query = graphql`
   query {
@@ -37,11 +28,30 @@ export const query = graphql`
             }
           }
           hero_image_alt
+          category
+          path
         }
         id
+        excerpt
       }
     }
   }
 `;
 
 export const Head = () => <Seo title={TITLE} />;
+
+export default function WikiPage({ data }: Props) {
+  return (
+    <Layout pageTitle={TITLE}>
+      <section className="flex flex-col gap-6">
+        {data.allMdx.nodes.map((node) => (
+          <PostCard
+            key={node.id}
+            post={node}
+            categories={node.frontmatter.category}
+          />
+        ))}
+      </section>
+    </Layout>
+  );
+}
